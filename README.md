@@ -69,4 +69,25 @@ fruits.customFilter(function(element){
     }
 })
 
+
+
+Array.prototype.myReduce = function(cb) {
+    let value = this[0];
+    for (let i = 1; i < this.length; i++) {
+      value = cb(value,this[i])
+    }
+    return value;
+  }
+  
+  
+  
+  
+  const sum1 = arrayOfNumbers.myReduce(function(accumulator, currentValue) {
+   
+  console.log(accumulator, currentValue)
+    return accumulator + currentValue;
+  
+  });
+  console.log(sum1);
+  
 ```
