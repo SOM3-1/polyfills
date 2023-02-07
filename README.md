@@ -90,4 +90,23 @@ Array.prototype.myReduce = function(cb) {
   });
   console.log(sum1);
   
+  const a = [1, 2, 3, 4, 5, 6, 7];
+
+Array.prototype.myReduce = function(callback, initialvaluee) {
+console.log(callback)
+  let acc = initialvaluee;
+  for (let i = 0; i < this.length; i++) {
+    if (acc === undefined) {
+      acc = this[i];
+      continue;
+    }
+		acc = callback(acc, this[i], i, this)
+  }
+  return acc;
+}
+
+const s = a.myReduce((acc, current) => acc+current,0);
+console.log(s)
+
+  
 ```
